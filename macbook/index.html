@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>macbookDemo</title>
+	<link rel="stylesheet" href="style/jquery.fullPage.css">
+	<link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+	<div id="fullPage">
+		<div class="section" id="light">
+			<h1>MacBook</h1>
+			<h3>轻于时代，先于时代。</h3>
+		</div>
+		<div class="section" id="screen">
+			<h1>全尺寸键盘，置身更纤薄空间</h1>
+			<a href="#">进一步了解</a>
+		</div>
+		<div class="section" id="osx">
+			<p>有了 OS X 这一操作系统，你便能通过 Mac 来一展所长。OS X El Capitan 既能让你轻松成就非同寻常之事，也能让你愉快处理一切日常之事</p>
+			<a href="#">进一步了解</a>
+		</div>
+		<div class="section" id="colorful">
+			<h1>现有金色、深空灰色，以及新增的玫瑰金色</h1>
+			<ul>
+				<li>
+					<a href=""><img src="imgs/grey.png" alt="" id="grey"></a>
+					<p>现有银色、金色、深空灰色，以及新增的玫瑰金色可供选择超乎想象的简约设计中雕琢出震撼的视觉体验</p>
+					<a href="">立即购买</a>
+				</li>
+				<li>
+					<a href=""><img src="imgs/gold.png" alt="" id="gold"></a>
+					<p>现有银色、金色、深空灰色，以及新增的玫瑰金色可供选择超乎想象的简约设计中雕琢出震撼的视觉体验</p>
+					<a href="">立即购买</a>
+				</li>
+				<li>
+					<a href=""><img src="imgs/rose.png" alt="" id="rose"></a>
+					<p>现有银色、金色、深空灰色，以及新增的玫瑰金色可供选择超乎想象的简约设计中雕琢出震撼的视觉体验</p>
+					<a href="">立即购买</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script src="js/move.js"></script>
+	<script>
+		$(function () {
+			$('#fullPage').fullpage({
+				navigation:true,
+				anchors:['page1','page2','page3','page4'],
+				verticalCentered:false,
+				afterLoad:function (anchorlink,index) {
+					if(index == 4){
+						move('#grey').rotate(360).end(function(){
+							move('#gold').rotate(360).end(function(){
+								move('#rose').rotate(360).end()
+							})
+						})
+					}
+				},
+				onLeave:function(index,nextindex,diretion){
+					// if (index == 4) {
+					// 	move('#rose').rotate(-360).end();
+					// 	move('#gold').rotate(-360).end();
+					// 	move('#rose').rotate(-360).end();
+					// }
+				},
+			})
+		})
+	</script>
+</body>
+</html>

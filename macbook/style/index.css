@@ -1,0 +1,92 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#light{
+	background: url('../imgs/light.jpg') no-repeat fixed bottom;
+	background-size: 100%;
+	text-align: center;
+	color: #333;
+	padding-top: 50px;
+}
+#light h1{
+	font-size: 50px;
+	text-indent: -8rem;
+}
+#light h3{
+	margin-top: 30px;
+	font-size: 18px;
+	font-weight: 300;
+	text-indent: 8rem;
+}
+
+#screen{
+	background: rgb(250,250,250) url('../imgs/screen.jpg') no-repeat;
+	background-size: 100%;
+	background-position:0 100px;
+	text-align: center;
+	padding-top: 30px;
+}
+#screen a{
+	color: rgb(134,134,134);
+	display: block;
+	margin-top: 50px;
+	font-size: 14px;
+}
+
+#osx{
+	background: url('../imgs/osx.jpg') no-repeat 300px center;
+	background-size: 34%;
+	text-align: center;
+}
+#osx p{
+	float: right;
+	width: 260px;
+	margin-top: 20px;
+	margin-right: 20px;
+	text-align: right;
+	font-size: 12px;
+}
+#osx a{
+	color: rgb(190,190,190);
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	clear: both;
+}
+#colorful{
+	padding-top: 50px;
+}
+#colorful h1{
+	text-align: center;
+	font-size: 24px;
+}
+#colorful ul{
+	margin: 20px auto;
+	width: 1140px
+}
+#colorful li{
+	list-style: none;
+	width: 360px;
+	height: 400px;
+	background: #f0f0f0;
+	float: left;
+	margin-right: 20px;
+}
+#colorful li img{
+	display: block;
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+}
+#colorful li p{
+	margin: 10px;
+	text-align: center;
+	font-size: 12px;
+}
+#colorful li a{
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	color: rgb(0,118,215);
+}
