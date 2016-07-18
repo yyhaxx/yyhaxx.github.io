@@ -1,6 +1,6 @@
 $('#index-search').bind('keyup',function () {
 	var searchText = $('#index-search').val();
-	$.ajax({url:'http://api.bing.com/qsonhs.aspx?type=cb&cb=jsonpcallback&q='+searchText,dataType:'jsonp'})
+	$.ajax({url:'https://api.bing.com/qsonhs.aspx?type=cb&cb=jsonpcallback&q='+searchText,dataType:'jsonp'})
 })
 function jsonpcallback(data) {
 	if (data.AS.FullResults ==0 ) {
