@@ -68,7 +68,7 @@
 
 	addEvent('index-search','keyup',function(){
 		var sText = getDom('index-search').value;
-		var url = 'http://api.bing.com/qsonhs.aspx?type=cb&cb=jsonpcallback&q='+sText;
+		var url = 'https://api.bing.com/qsonhs.aspx?type=cb&cb=jsonpcallback&q='+sText;
 		getData(url);
 		getDom('asso-con').style.display = 'block';
 	})
