@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>必应</title>
+	<link rel="stylesheet" href="style/index.css">
+	<link href="imgs/bing_p_rr_teal_min.ico" rel="shortcut icon">
+</head>
+<body>
+	<div class="content">
+		<div class="search-box">
+			<div class="logo"><a href=""><img src="imgs/hp_zh_cn.png" alt=""></a></div>
+			<div class="search-form">
+				<form action="http://cn.bing.com" method="get">
+					<input type="text" name="q" id="index-search" autocomplete="off">
+					<input type="submit" value="" id="index-search-btn">
+				</form>
+			</div>
+			<div class="clear"></div>
+			<ul class="asso-con" id="asso-con">
+				<li><a href="">我要这铁棒又如何</a></li>
+				<li><a href="">这铁棒有何用</a></li>
+				<li><a href="">我有这变化又如何</a></li>
+				<li><a href="">善恶浮世真假界</a></li>
+				<li><a href="">这变化又如何</a></li>
+				<li><a href="">跪一人为师</a></li>
+				<li><a href="">叫一声佛祖</a></li>
+				<li><a href="">是人是鬼是妖怪</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+	var getDom = function (id) {
+		return document.getElementById(id)
+	}
+	var addEvent = function (id,event,fn) {
+		var el = getDom(id)||document;
+		if(el.addEventListener){
+			el.addEventListener(event,fn,false)
+		}else{
+			el.attachEvent('on'+event,fn)
+		}
+	}
+	var jsonpcallback = function (data) {
+		var temAS = data.AS;
+		var html = '';
+		if (temAS.FullResults == 0) {
+			return
+		}
+		temAS.Results[0].Suggests.forEach(function (item) {
+			html += '<li>'+item.Txt+'</li>'
+		})
+		getDom('asso-con').innerHTML = html
+	}
+	var delegateEvent = function (target,event,fn) {
+		addEvent(document,event,function (e) {
+			if(e.target.nodeName == target.toUpperCase()){
+				fn.call(e.target)
+			}
+		})
+	}
+	var getData = function (url) {
+		var script = document.createElement('script');
+		script.setAttribute('src',url);
+		document.getElementsByTagName('head')[0].appendChild(script)
+	}
+
+	addEvent('index-search','keyup',function(){
+		var sText = getDom('index-search').value;
+		var url = 'http://api.bing.com/qsonhs.aspx?type=cb&cb=jsonpcallback&q='+sText;
+		getData(url);
+		getDom('asso-con').style.display = 'block';
+	})
+	delegateEvent('li','click',function(){
+		var keyword = this.innerHTML;
+		location.href = 'http://cn.bing.com/?q='+keyword;
+	})
+	addEvent(document,'click',function () {
+		getDom('asso-con').style.display = 'none';
+	})
+</script>
+</html>
