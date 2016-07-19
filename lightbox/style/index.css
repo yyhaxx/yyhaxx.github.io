@@ -1,0 +1,102 @@
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form{margin:0;}
+ol,ul{margin:0; padding:0;}
+img{
+	display: block;
+}
+
+@font-face {font-family: "iconfont";
+  src: url('font/iconfont.eot?t=1468890192'); /* IE9*/
+  src: url('font/iconfont.eot?t=1468890192#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('font/iconfont.woff?t=1468890192') format('woff'), /* chrome, firefox */
+  url('font/iconfont.ttf?t=1468890192') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('font/iconfont.svg?t=1468890192#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-youfanye:before { content: "\e63e"; }
+.icon-zuofanye:before { content: "\e63f"; }
+
+#mask{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.5;
+	z-index: 100;
+	display: none;
+}
+#layer{
+	position: fixed;
+	width: 500px;
+	background: #fff;
+	z-index: 101;
+	left: 50%;
+	margin-left: -250px;
+	display: none;
+}
+#layer .img-show{
+	position: relative;
+	border: 5px solid #fff;
+	border-radius: 3px;
+	overflow: hidden;
+	background: url(../imgs/dengdai.gif) no-repeat center center;
+}
+#layer .img-show .btn{
+	position: absolute;
+	top: 0;
+	width: 40%;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+}
+.hide-btn{
+	display: none;
+}
+#layer .img-show .pre-btn{
+	left: 0
+}
+#layer .img-show .next-btn{
+	right: 0
+}
+#layer i{
+	font-size: 24px;
+	position: absolute;
+	top: 50%;
+	margin-top:-13px;
+}
+.pre-btn i{
+	left: 18%;
+	margin-left: -12px;
+}
+.next-btn i{
+	right: 18%;
+	margin-right: -12px;
+}
+#layer .img-detail{
+	position: relative;
+	margin: 0 5px;
+	margin-top: -60px;
+	background: rgba(0,0,0,.5);
+}
+#layer .img-detail .img-inf{
+	padding: 10px 5px;
+	color: #fff;
+}
+#layer .img-detail .img-inf span{
+	color: #999;
+}
+#layer .img-detail .guan-btn{
+	font-size: 24px;
+	position: absolute;
+	right: 12px;
+	top: 10px;
+	z-index: 103;
+	cursor: pointer;
+}
