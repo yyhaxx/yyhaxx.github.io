@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>carrousel</title>
+	<link rel="stylesheet" href="style/carrousel.css">
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/carrousel.js" type="text/javascript"></script>
+</head>
+<body style="background:rgba(222,222,222,.9)">
+	<div class="poster-main J_Poster" data-setting='{"width":1200,"height":360,"posterWidth":640,"posterHeight":360,"speed":500,"scale":0.8,"verticalAlign":"middle"}'>
+		<ul class="poster-list">
+			<li class="poster-item"><a href=""><img src="imgs/1.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="imgs/2.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="imgs/3.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="imgs/4.jpg" alt="" width="100%"></a></li>
+			<li class="poster-item"><a href=""><img src="imgs/5.jpg" alt="" width="100%"></a></li>
+		</ul>
+		<div class="poster-btn poster-prev-btn"><b><</b></div>
+		<div class="poster-btn poster-next-btn"><b>></b></div>
+	</div>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur quos veritatis distinctio est ipsam repudiandae vel totam asperiores quas! Debitis quam voluptate fuga iure ut deleniti, illum laborum quaerat aut.</div>
+
+	<script>
+		$(function () {
+			// var carrousel = new Carrousel($('.J_Poster').eq(0))
+			Carrousel.init($('.J_Poster'))
+		})
+	</script>
+</body>
+</html>

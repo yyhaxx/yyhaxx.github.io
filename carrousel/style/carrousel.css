@@ -1,0 +1,55 @@
+body,ul{
+	margin: 0;
+	padding: 0;
+}
+img{
+	display: block;
+}
+li{
+	list-style: none;
+}
+
+.poster-main{
+	width: 800px;
+	position: relative;
+	height: 450px;
+	margin: 50px auto;
+	overflow: hidden;
+}
+.poster-main .poster-list{
+	width: 800px;
+}
+.poster-main .poster-item{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.poster-main .poster-btn{
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	/*z-index: 100;*/
+	top: 0;
+	text-align: center;
+	line-height: 450px;
+	color: rgba(255,255,255,.8);
+	font-size: 60px;
+	font-weight: 900;
+	cursor: pointer;
+	/*background: rgba(0,255,255,.7);*/
+}
+.poster-main .poster-btn:hover{
+	color: rgba(255,255,255,1);
+	transform:scale(2);
+	-webkit-transform:scale(2);
+	-moz-transform:scale(2);
+	-o-transform:scale(2);
+	-ms-transform:scale(2);
+
+}
+.poster-main .poster-prev-btn{
+	left: 0;
+}
+.poster-main .poster-next-btn{
+	right: 0;
+}
