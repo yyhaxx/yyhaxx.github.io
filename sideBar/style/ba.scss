@@ -1,0 +1,149 @@
+@font-face {font-family: "iconfont";
+  src: url('fonts/iconfont.eot?t=1469108212'); /* IE9*/
+  src: url('fonts/iconfont.eot?t=1469108212#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/iconfont.woff?t=1469108212') format('woff'), /* chrome, firefox */
+  url('fonts/iconfont.ttf?t=1469108212') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('fonts/iconfont.svg?t=1469108212#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-back-top:before {
+  content: "\e644";
+}
+
+.icon-weixin:before {
+  content: "\e7f0";
+}
+
+.icon-app:before {
+  content: "\e629";
+}
+
+.icon-contact:before {
+  content: "\e60d";
+}
+
+
+$toolbar-size:52px;
+@import "mixin";
+.toolbar{
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -$toolbar-size / 2;
+}
+.toolbar-item{
+  position: relative;
+  display: block;
+  width: $toolbar-size;
+  height: $toolbar-size;
+  margin-top: 1px;
+  &:hover{
+    .toolbar-btn{
+      &:before{
+        top:-$toolbar-size;
+      }
+      &:after{
+        top: 0;
+      }
+    }
+    &:after{
+      @include opacity(1);
+      @include scale(1);
+    }
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    width: 172px;
+    display: block;
+    background: url("../imgs/toolbar_img.png");
+    background-repeat: no-repeat;
+    right: $toolbar-size - 6;
+    bottom: -10px;
+    @include opacity(0);
+    @include scale(0.01);
+    @include transform-origin(95% 95%);
+    @include transition (all 1s);
+  }
+}
+.toolbar-item-weixin{
+  &:after{
+    content: "";
+    height: 212px;
+    background-position: 0 0;
+  }
+  .toolbar-btn{
+    @extend .icon-weixin;
+    &:after{
+      content: "微信账号";
+    }
+  }
+}
+.toolbar-item-contact{
+  .toolbar-btn{
+    @extend .icon-contact;
+    &:after{
+      content: "联系我们";
+    }
+  }
+}
+.toolbar-item-app{
+  &:after{
+    content: "";
+    height: 194px;
+    background-position: 0 -222px;
+  }
+  .toolbar-btn{
+    @extend .icon-app;
+    &:after{
+      content: "app下载";
+    }
+  }
+}
+.toolbar-item-top{
+  .toolbar-btn{
+    @extend .icon-back-top;
+    &:after{
+      content: "返回顶部";
+    }
+  }
+}
+.toolbar-btn{
+  top: 0;
+  overflow: hidden;
+  &,&:before,&:after{
+    width: $toolbar-size;
+    height: $toolbar-size;
+    position: absolute;
+    left: 0;
+  }
+  &:before,&:after{
+    content: "";
+    color: #fff;
+    text-align: center;
+    @include transition(top 1s);
+  }
+  @extend .iconfont;
+
+  &:before{
+    top: 0;
+    background: #d0d6d9;
+    font-size: 30px;
+    line-height: $toolbar-size;
+  }
+  &:after{
+    top: $toolbar-size;
+    background: #98a1a6;
+    font-size: 12px;
+    line-height: 1.2;
+    padding-top:12px;
+    white-space: pre;
+  }
+}
